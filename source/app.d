@@ -19,5 +19,5 @@ void main(string[] args) {
     if (!rpn) {
         tokens = new Parser(tokens).parse();
     }
-    writeln(calculate(tokens));
+    writeln(new StackCalculator(tokens).calculate());
 }
