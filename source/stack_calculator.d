@@ -76,10 +76,10 @@ void exponentiate() {
 double calculate(Token[] tokens) {
     stack.length = 0;
     foreach (Token token; tokens) {
-        if (cast(const(ValueToken)) token) {
-            push((cast(const(ValueToken)) token).value);
-        } else if (cast(const(OperatorToken)) token) {
-            Operator operator = (cast(const(OperatorToken)) token).operator;
+        if (cast(ValueToken) token) {
+            push((cast(ValueToken) token).value);
+        } else if (cast(OperatorToken) token) {
+            Operator operator = (cast(OperatorToken) token).operator;
             switch (operator) {
                 case Operator.ADDITION:
                     add();
@@ -105,8 +105,8 @@ double calculate(Token[] tokens) {
                 default:
                     throw new Exception("Unhandled Operator");
             }
-        } else if (cast(const(FunctionToken)) token) {
-            Function func = (cast(const(FunctionToken)) token).func;
+        } else if (cast(FunctionToken) token) {
+            Function func = (cast(FunctionToken) token).func;
             switch (func) {
                 case Function.ABS:
                     push(fabs(pop()));
@@ -162,8 +162,8 @@ double calculate(Token[] tokens) {
                 default:
                     throw new Exception("Unhandled Function");
             }
-        } else if (cast(const(ConstantToken)) token) {
-            Constant constant = (cast(const(ConstantToken)) token).constant;
+        } else if (cast(ConstantToken) token) {
+            Constant constant = (cast(ConstantToken) token).constant;
             switch (constant) {
                 case Constant.E:
                     push(E);

@@ -206,16 +206,16 @@ class Tokenizer {
 unittest {
     Token[] tokens = new Tokenizer("2.0e-1*SIN(PI)").tokenize();
     assert(tokens.length == 6);
-    assert(cast(const(ValueToken)) tokens[0]);
-    assert((cast(const(ValueToken)) tokens[0]).value == 0.2);
-    assert(cast(const(OperatorToken)) tokens[1]);
-    assert((cast(const(OperatorToken)) tokens[1]).operator == Operator.MULTIPLICATION);
-    assert(cast(const(FunctionToken)) tokens[2]);
-    assert((cast(const(FunctionToken)) tokens[2]).func == Function.SIN);
-    assert(cast(const(OperatorToken)) tokens[3]);
-    assert((cast(const(OperatorToken)) tokens[3]).operator == Operator.LEFT_PAREN);
-    assert(cast(const(ConstantToken)) tokens[4]);
-    assert((cast(const(ConstantToken)) tokens[4]).constant == Constant.PI);
-    assert(cast(const(OperatorToken)) tokens[5]);
-    assert((cast(const(OperatorToken)) tokens[5]).operator == Operator.RIGHT_PAREN);
+    assert(cast(ValueToken) tokens[0]);
+    assert((cast(ValueToken) tokens[0]).value == 0.2);
+    assert(cast(OperatorToken) tokens[1]);
+    assert((cast(OperatorToken) tokens[1]).operator == Operator.MULTIPLICATION);
+    assert(cast(FunctionToken) tokens[2]);
+    assert((cast(FunctionToken) tokens[2]).func == Function.SIN);
+    assert(cast(OperatorToken) tokens[3]);
+    assert((cast(OperatorToken) tokens[3]).operator == Operator.LEFT_PAREN);
+    assert(cast(ConstantToken) tokens[4]);
+    assert((cast(ConstantToken) tokens[4]).constant == Constant.PI);
+    assert(cast(OperatorToken) tokens[5]);
+    assert((cast(OperatorToken) tokens[5]).operator == Operator.RIGHT_PAREN);
 }

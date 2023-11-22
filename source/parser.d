@@ -37,10 +37,10 @@ class Parser {
         if (eof()) {
             return false;
         }
-        if (!(cast(const(OperatorToken)) token)) {
+        if (!(cast(OperatorToken) token)) {
             return false;
         }
-        return (cast(const(OperatorToken)) token).operator == ot;
+        return (cast(OperatorToken) token).operator == ot;
     }
 
     private void parseFunctionExpression() {
@@ -64,12 +64,12 @@ class Parser {
     }
 
     private void parsePrimaryExpression() {
-        if (cast(const(ValueToken)) token || cast(const(ConstantToken)) token) {
+        if (cast(ValueToken) token || cast(ConstantToken) token) {
             outTokens ~= token;
             next();
             return;
         }
-        if (cast(const(FunctionToken)) token) {
+        if (cast(FunctionToken) token) {
             parseFunctionExpression();
             return;
         }
