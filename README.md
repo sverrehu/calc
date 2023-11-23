@@ -28,7 +28,7 @@ $ ./calc -r 'PI cos'
 -1
 $ ./calc -r 81 sqrt
 9
-$ /calc -h
+$ ./calc -h
 
 calc -- a simple command-line calculator
 
