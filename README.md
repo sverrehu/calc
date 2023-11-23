@@ -1,8 +1,8 @@
 # calc -- a simple command-line calculator
 
-Just my first experiments with the D language: A simple command-line
-calculator that supports infix and postfix (Reverse Polish Notation)
-expressions.
+Just my first experiments with the [D language](https://dlang.org/): A
+simple command-line calculator that supports infix and postfix
+(Reverse Polish Notation) expressions.
 
 I was just Googling as I moved along to get a workable syntax, so this
 is by no means an example of how D should be written.

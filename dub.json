@@ -2,7 +2,7 @@
 	"authors": [
 		"Sverre H. Huseby"
 	],
-	"description": "A minimal D application.",
-	"license": "proprietary",
+	"description": "A simple command-line calculator",
+	"license": "MIT",
 	"name": "calc"
 }
