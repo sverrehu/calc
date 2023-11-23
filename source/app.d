@@ -36,6 +36,23 @@ private void help() {
     );
 }
 
+void calculate(string expression, bool rpn) {
+    Token[] tokens = new Tokenizer(expression).tokenize();
+    if (!rpn) {
+        tokens = new Parser(tokens).parse();
+    }
+    writeln(format("%.15G", new StackCalculator(tokens).calculate()));
+}
+
+string readStdin() {
+    string input = "";
+    string line;
+    while ((line = stdin.readln()) !is null) {
+        input ~= line;
+    }
+    return input;
+}
+
 int main(string[] args) {
     bool rpn;
     string expression = "";
@@ -50,12 +67,11 @@ int main(string[] args) {
             expression ~= args[q];
         }
     }
+    if (expression.length == 0) {
+        expression = readStdin();
+    }
     try {
-        Token[] tokens = new Tokenizer(expression).tokenize();
-        if (!rpn) {
-            tokens = new Parser(tokens).parse();
-        }
-        writeln(format("%.15G", new StackCalculator(tokens).calculate()));
+        calculate(expression, rpn);
     } catch (Exception e) {
         stderr.writeln("Error: " ~ e.msg);
         return 1;
