@@ -29,7 +29,7 @@ class Parser {
     private void nextCheckEof() {
         next();
         if (eof()) {
-            error("err.unexpectedEndOfInput");
+            error("Unexpected end of input");
         }
     }
 
