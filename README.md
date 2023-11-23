@@ -1,4 +1,4 @@
-# calc
+# calc -- a simple command-line calculator
 
 Just my first experiments with the D language: A simple command-line
 calculator that supports infix and postfix (Reverse Polish Notation)
