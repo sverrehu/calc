@@ -16,3 +16,6 @@ test-test-*
 *.lst
 /.idea
 *.iml
+calc
+calc-test-library
+out/
